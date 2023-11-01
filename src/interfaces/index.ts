@@ -4,6 +4,7 @@ export interface ProductType {
   price: number
   image: string
   description: string
+  quantity: number
   category: string
   rating: {rate: number, count: number}
 }
