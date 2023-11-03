@@ -93,7 +93,7 @@ const ShoppingCart = () => {
                     <div className="mt-4 flex justify-between sm:space-y-6 sm:mt-0 sm:block sm:space-x-6">
                       <div className='flex items-center border-gray-100'>
                         <span className='cursor-pointer rounded-l bg-gray-100 py-1 px-3.5 duration-100 hover:bg-blue-500 hover:text-blue-50' onClick={() => handleDecrement(product.id)}> - </span>
-                        <input className='h-8 w-8 border bg-white text-center text-xs outline-none' type='number' value={product.quantity} />
+                        <input className='h-8 w-8 border bg-white text-center text-xs outline-none' type='number' value={product.quantity} readOnly />
                         <span className='cursor-pointer rounded-r bg-gray-100 py-1 px-3 duration-100 hover:bg-blue-500 hover:text-blue-50' onClick={() => handleIncrement(product.id)}> + </span>
                       </div>
 
@@ -101,8 +101,8 @@ const ShoppingCart = () => {
                         <p className='text-sm'>
                           {(product.price * product.quantity).toLocaleString('en-US', {style: 'currency', currency: 'usd'})}
                         </p>
-                        <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' className='h-5 w-5 cursor-pointer duration-150 hover:text-red-500' onClick={() => removeProduct(product.id)}>
-                          <path stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12'/>
+                        <svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' strokeWidth='1.5' stroke='currentColor' className='h-5 w-5 cursor-pointer duration-150 hover:text-red-500' onClick={() => removeProduct(product.id)}>
+                          <path strokeLinecap='round' strokeLinejoin='round' d='M6 18L18 6M6 6l12 12'/>
                         </svg>
                       </div>
                     </div>
@@ -138,7 +138,7 @@ const ShoppingCart = () => {
           <div className='inline-flex rounded-full bg-yellow-100 p-4'>
             <div className='rounded-full stroke-yellow-600 bg-yellow-200 p-4'>
               <svg className='w-16 h-16' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                <path d='M14.0002 9.33337V14M14.0002 18.6667H14.0118M25.6668 14C25.6668 20.4434 20.4435 25.6667 14.0002 25.6667C7.55684 25.6667 2.3335 20.4434 2.3335 14C2.3335 7.55672 7.55684 2.33337 14.0002 2.33337C20.4435 2.33337 25.6668 7.55672 25.6668 14Z' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'></path>
+                <path d='M14.0002 9.33337V14M14.0002 18.6667H14.0118M25.6668 14C25.6668 20.4434 20.4435 25.6667 14.0002 25.6667C7.55684 25.6667 2.3335 20.4434 2.3335 14C2.3335 7.55672 7.55684 2.33337 14.0002 2.33337C20.4435 2.33337 25.6668 7.55672 25.6668 14Z' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round'></path>
               </svg>
             </div>
           </div>
