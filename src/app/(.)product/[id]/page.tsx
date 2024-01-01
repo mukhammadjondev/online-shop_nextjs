@@ -5,8 +5,6 @@ import { ProductType } from "@/interfaces"
 import { Dialog } from "@headlessui/react"
 import { useParams, useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
-import { StarIcon as StarIconOutline } from '@heroicons/react/24/outline'
-import { StarIcon } from '@heroicons/react/24/solid'
 import ReactStars from 'react-stars'
 import { toast } from "react-toastify"
 
@@ -19,7 +17,7 @@ const ProductDetailedPage = () => {
   const router = useRouter()
 
   const handleClick = () => {
-    const products: ProductType[] = JSON.parse(localStorage.getItem('carts') as string) || []
+    const products: ProductType[] = typeof window !== undefined && JSON.parse(localStorage.getItem('carts') as string) || []
     const isExistProduct = products.find(c => c.id === product?.id)
     if(isExistProduct) {
       const updatedData = products.map(c => {

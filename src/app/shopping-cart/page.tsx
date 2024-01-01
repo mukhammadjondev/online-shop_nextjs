@@ -8,7 +8,7 @@ import ReactStars from "react-stars"
 
 const ShoppingCart = () => {
   const [total, setTotal] = useState<number>(0)
-  const [products, setProducts] = useState<ProductType[]>(JSON.parse(localStorage.getItem('carts') as string) || [])
+  const [products, setProducts] = useState<ProductType[]>([])
 
   const removeProduct = (id: number) => {
     const updatedCart = products.filter(product => product.id !== id)
@@ -49,6 +49,12 @@ const ShoppingCart = () => {
       setProducts(updatedCart)
     }
   }
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setProducts(JSON.parse(localStorage.getItem('carts') || ''))
+    }
+  }, [])
 
   useEffect(() => {
     const total = products.reduce((acc, item) => acc + item.price * item.quantity, 0)

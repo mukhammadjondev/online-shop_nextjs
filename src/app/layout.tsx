@@ -11,6 +11,9 @@ const montserrat = Montserrat({ subsets: ['latin'], display: 'swap' })
 export const metadata: Metadata = {
   title: 'Online shop',
   description: 'Created by Mukhammadjon',
+  icons: {
+    icon: './logo.svg'
+  }
 }
 
 export default function RootLayout({
